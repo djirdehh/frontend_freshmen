@@ -1,1 +1,1 @@
-# tinyhouse-challenges
+# Frontend Freshmen
