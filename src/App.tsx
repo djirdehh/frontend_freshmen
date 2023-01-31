@@ -15,7 +15,7 @@ function App() {
       const res = await fetch("https://api.buttondown.email/v1/subscribers", {
         method: "POST",
         headers: {
-          Authorization: `Token ${import.meta.env.BUTTONDOWN_API_KEY}`,
+          Authorization: `Token ${import.meta.env.VITE_BUTTONDOWN_API_KEY}`,
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
