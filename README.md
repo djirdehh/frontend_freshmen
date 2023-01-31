@@ -1,1 +1,1 @@
-# Frontend Freshmen
+# Frontend Freshmen Newsletter
