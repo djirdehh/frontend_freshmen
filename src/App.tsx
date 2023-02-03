@@ -53,19 +53,21 @@ function App() {
           onChange={(e) => setName(e.target.value)}
           id="name"
           type="text"
-          placeholder="Your first name"
+          placeholder="First name"
+          disabled={loading}
         />
         <input
-          className="ml-5 focus:ring-blue-500 focus:border-blue-500 shadow appearance-none border border-gray-300 rounded-lg w-full py-2 px-3 font-mono text-gray-700 leading-tight focus:shadow-outline"
+          className="ml-2 focus:ring-blue-500 focus:border-blue-500 shadow appearance-none border border-gray-300 rounded-lg w-full py-2 px-3 font-mono text-gray-700 leading-tight focus:shadow-outline"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           id="email"
           type="email"
-          placeholder="Your email address"
+          placeholder="Email address"
+          disabled={loading}
         />
         <button
-          disabled={name == null || email == null}
-          className="px-3 ml-5 font-mono tracking-tighter font-semibold bg-black text-white rounded-lg shadow-sm h-12 disabled:opacity-25"
+          disabled={name == null || email == null || loading}
+          className="px-3 ml-2 font-mono tracking-tighter font-semibold bg-black text-white rounded-lg shadow-sm h-10 disabled:opacity-25"
           onClick={subscribe}
         >
           {loading ? "Subscribing..." : "Subscribe"}
@@ -85,7 +87,7 @@ function App() {
   return (
     <div className="h-full bg-white">
       <div className="h-full grid grid-cols-1 lg:grid-cols-2">
-        <div className="flex flex-col justify-center p-10">
+        <div className="flex flex-col justify-center p-5 md:p-10">
           <div className="place-self-center text-center">
             <img className="w-96" style={{ margin: "0 auto" }} src={logo} />
             {content}
@@ -99,7 +101,7 @@ function App() {
             )}
           </div>
         </div>
-        <div className="h-full">
+        <div className="h-full hidden md:block">
           <img
             className="h-full"
             src="https://cdn.discordapp.com/attachments/1063230152827469944/1069415136407863358/hassan_dj_screensaver_wallpaper_white_background_hip_hop_graffi_24fa86af-10e2-44d8-91eb-73f6332b27c0.png"
