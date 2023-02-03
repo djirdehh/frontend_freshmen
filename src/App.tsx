@@ -30,10 +30,11 @@ function App() {
         throw new Error();
       }
 
-      setLoading(false);
       setUserSubscribed(true);
     } catch {
-      setError("Uh oh something went wrong. Try again soon!");
+      setError("Uh oh, something went wrong. Try again soon or reach out to me directly @ hassan.djirdeh@gmail.com.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -77,9 +78,11 @@ function App() {
   ) : (
     <>
       <p className="text-4xl">💥</p>
-      <p className="text-lg font-mono mt-5 font-bold">
-        You've subscribed! Be sure to check your spam/promotions folders in your
-        inbox if you can't find the welcome email.
+      <p className="text-md font-mono mt-5 font-bold">
+        You've subscribed! You can expect an email to hit your inbox shortly.
+        <br />
+        <br />
+        Catch you soon!
       </p>
     </>
   );
