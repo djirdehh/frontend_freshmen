@@ -27,12 +27,17 @@ function App() {
       });
 
       if (!res.ok) {
-        throw new Error();
+        return res.text().then((text) => {
+          throw new Error(text);
+        });
       }
 
       setUserSubscribed(true);
-    } catch {
-      setError("Uh oh, something went wrong. Try again soon or reach out to me directly @ hassan.djirdeh@gmail.com.");
+    } catch (err) {
+      console.log(err);
+      setError(
+        "Uh oh, something went wrong. Try again soon or reach out to me directly @ hassan.djirdeh@gmail.com."
+      );
     } finally {
       setLoading(false);
     }
@@ -110,6 +115,9 @@ function App() {
             src="https://cdn.discordapp.com/attachments/1063230152827469944/1069415136407863358/hassan_dj_screensaver_wallpaper_white_background_hip_hop_graffi_24fa86af-10e2-44d8-91eb-73f6332b27c0.png"
           />
         </div>
+        <p className="text-xs font-mono mt-5 absolute bottom-2 left-2 text-left">
+          <sup>*</sup>RSS feed and archive coming soon...
+        </p>
       </div>
     </div>
   );
